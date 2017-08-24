@@ -6,7 +6,7 @@ Currently is not stable. The client is less than 50 lines, the project will be c
 
 # TO-DO
 1. Stability
-2. Auto StartUP
+2. Auto Startup
 2. Privilege escalation
 3. Encryption in communication
 4. Keylogger
