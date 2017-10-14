@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
  * Created by mpampis on 7/1/2017.
  */
 public class JapocalypseClient {
-    public static main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Process p = Runtime.getRuntime().exec("cmd");
         PrintWriter writeToProcess = new PrintWriter(p.getOutputStream());

@@ -7,16 +7,20 @@ import java.net.Socket;
  * Created by mpampis on 7/2/2017.
  */
 public class Victim {
-    private static int count = 0;
-    private int id;
-    private Socket socket;
-    public PrintWriter out;
-    public InputStreamReader in;
-    public BufferedReader bin;
+    private static int count = 0; // this counts the victims, to give them a unique id
+
+    private int id; // id of the victim
+    private Socket socket; // the victim socket
+    public PrintWriter out; // this stream will be used to write to the victim
+    public InputStreamReader in; // input stream
+    public BufferedReader bin; // buffer input stream
 
     public Victim(Socket socket) throws IOException {
-        id = count++;
+        id = count++; // giving unique id to the victim
         this.socket = socket;
+        /**
+         * init the streams
+         */
         out = new PrintWriter(socket.getOutputStream());
         in = new InputStreamReader(socket.getInputStream());
         bin = new BufferedReader(in);
@@ -44,6 +48,11 @@ public class Victim {
         return socket;
     }
 
+    /**
+     * Two users they are equal, if and only if the have the same IDs
+     * @param o the user
+     * @return true if the users are equal
+     */
     @Override
     public boolean equals(Object o) {
         if(o instanceof Victim) {
