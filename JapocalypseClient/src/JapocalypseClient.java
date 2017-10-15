@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by mpampis on 7/1/2017.
+ * Created by sheffboom on 10/15/2017.
  */
 public class JapocalypseClient {
     public static void main(String[] args) throws Exception {
