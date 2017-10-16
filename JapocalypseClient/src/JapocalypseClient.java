@@ -7,7 +7,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * Created by mpampis on 7/1/2017.
+ * Created by sheffboom on 10/15/2017.
  */
 public class JapocalypseClient {
     private Socket socket;
