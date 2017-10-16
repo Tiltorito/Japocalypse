@@ -6,5 +6,6 @@ package Server;
 
 @FunctionalInterface
 public interface Executable {
-    public boolean execute(String... args);
+     boolean execute(String... args);
+
 }
