@@ -1,6 +1,6 @@
 # Japocalypse
 
-A Java backdoor created in Java, but currently support only Windows.
+A backdoor created in Java, but currently support only Windows.
 
 # TO - DO
 
