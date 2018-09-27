@@ -1,6 +1,6 @@
 # Japocalypse
 
-A backdoor created in Java, but currently support only Windows.
+A Spyware written in Java, but currently support only Windows.
 
 # TO - DO
 
@@ -24,7 +24,7 @@ A backdoor created in Java, but currently support only Windows.
 
 - Add feature to give nicknames to the clients.
 
-- Add privilages privileges escalation.
+- Add privilages escalation.
 
 - Add feature to be able to see the running process and kill them if you want to.
 
